@@ -9,19 +9,20 @@ function SearchCard({ video }) {
   return (
     <div>
       <Link to={`/video/${video?.videoId}`}>
-        <div className="flex flex-col md:flex-row  mb-8 md:mb-3  md:p-4">
-          <div className="relative flex h-48  w-full md:w-80   ">
+        <div className="flex flex-col md:flex-row mb-8 md:mb-3 md:p-4">
+          <div className="relative flex h-48 w-full md:w-80 rounded-lg overflow-hidden">
             <img
-              className="h-full w-full rounded-lg object-cover"
+              className="h-full w-full object-cover"
               src={video?.thumbnails[0]?.url}
+              alt="video thumbnail"
             />
             {video?.lengthSeconds && <Time time={video?.lengthSeconds} />}
           </div>
           <div className="flex flex-col ml-4 md:ml-6 mt-4 md:mt-0 overflow-hidden">
-            <span className="text-lg md:text-2xl font-semibold line-clamp-2 ">
+            <span className="text-lg md:text-2xl font-semibold line-clamp-2">
               {video?.title}
             </span>
-            <span className="empty:hidden text-sm line-clamp-1 md:line-clamp-2md:pr-24 md:my-4">
+            <span className="empty:hidden text-sm line-clamp-1 md:line-clamp-2 md:pr-24 md:my-4">
               {video?.descriptionSnippet}
             </span>
             <div className="hidden md:flex items-center">
@@ -30,22 +31,20 @@ function SearchCard({ video }) {
                   <img
                     className="h-full w-full object-cover"
                     src={video?.author?.avatar[0]?.url}
+                    alt="author avatar"
                   />
                 </div>
               </div>
               <div className="flex flex-col">
-                <span className="text-sm font-semibold mt-2  flex items-center">
+                <span className="text-sm font-semibold mt-2 flex items-center">
                   {video?.author?.title}
                   {video?.author?.badges[0]?.type === "VERIFIED_CHANNEL" && (
-                    <BsFillCheckCircleFill className=" text-[12px] lg:text-[10px] xl:text-[12px] ml-1" />
+                    <BsFillCheckCircleFill className="text-[12px] lg:text-[10px] xl:text-[12px] ml-1" />
                   )}
                 </span>
-                <div className="flex text-sm font-semibold  truncate overflow-hidden">
-                  <span>{`${abbreviateNumber(
-                    video?.stats?.views,
-                    2
-                  )} views`}</span>
-                  <span className="flex text-[24px] leading-none font-bold  relative top-[-10px] mx-1">
+                <div className="flex text-sm font-semibold truncate overflow-hidden">
+                  <span>{`${abbreviateNumber(video?.stats?.views, 2)} views`}</span>
+                  <span className="flex text-[24px] leading-none font-bold relative top-[-10px] mx-1">
                     .
                   </span>
                   <span className="truncate">{video?.publishedTimeText}</span>

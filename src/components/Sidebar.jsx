@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { GoHome } from "react-icons/go";
 import { SiYoutubeshorts } from "react-icons/si";
 import { MdOutlineSubscriptions, MdHistory } from "react-icons/md";
@@ -24,6 +24,8 @@ import { MdPodcasts } from "react-icons/md";
 import { BiVideo } from "react-icons/bi";
 import { GiLinkedRings } from "react-icons/gi";
 function Sidebar() {
+  // const [isOpen, setIsOpen] = useState(false);
+  // const navigate = useNavigate();
   const sidebarItems = [
     {
       id: 1,
