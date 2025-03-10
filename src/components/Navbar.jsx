@@ -6,7 +6,7 @@ import { IoMdMic } from "react-icons/io";
 import { RiVideoAddLine } from "react-icons/ri";
 import logo from "../../public/logo.png";
 import profile from "../../public/profile.jpg";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Navbar() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -25,7 +25,7 @@ function Navbar() {
       {/* Left Section */}
       <div className="flex items-center space-x-4">
         <AiOutlineMenu className="text-2xl cursor-pointer md:hidden" onClick={() => setMenuOpen(!menuOpen)} />
-        <img src={logo} alt="Logo" className="w-24 cursor-pointer" />
+        <Link to={"/"}><img src={logo} alt="Logo" className="w-24 cursor-pointer" /> </Link>
       </div>
       
       {/* Search Bar */}

@@ -24,8 +24,6 @@ import { MdPodcasts } from "react-icons/md";
 import { BiVideo } from "react-icons/bi";
 import { GiLinkedRings } from "react-icons/gi";
 function Sidebar() {
-  // const [isOpen, setIsOpen] = useState(false);
-  // const navigate = useNavigate();
   const sidebarItems = [
     {
       id: 1,
@@ -155,7 +153,7 @@ function Sidebar() {
     },
   ];
   return (
-    <div className="px-6 w-[17%] h-[calc(100vh-6.625rem)] overflow-y-scroll overflow-x-hidden ">
+    <div className="px-6 w-[17%] h-[calc(100vh-6.625rem)] overflow-y-scroll overflow-x-hidden hidden ">
       {/* Home */}
       <div className=" space-y-3 items-center">
         {sidebarItems.map((item) => {
